@@ -3,12 +3,12 @@ import React, {useState} from 'react';
 import { Description } from './Description';
 import { addNumberOfClicks } from './utils';
 
-export const Welcome = () => {
+export const Welcome = ({ name = "Jack" }) => {
     const [numberOfClicks, setNumberOfClicks] = useState(0);
 
     return (
         <>
-            <h2>Welcome!</h2>
+            <h2>{`Welcome ${name}!`}</h2>
             <section>
                 <Description />
                 <button

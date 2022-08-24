@@ -1,8 +1,8 @@
-import { Welcome } from "./Welcome";
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Description } from './Description';
 import { addNumberOfClicks } from './utils';
+import { Welcome } from "./Welcome";
 
 jest.mock('./Description', () => ({
     Description: () => (<div data-testid="welcome-text" />)
@@ -10,6 +10,12 @@ jest.mock('./Description', () => ({
 jest.mock('./utils');
 
 describe('Welcome component', () => {
+    it('should render a welcome header with the expected name', () => {
+        render(<Welcome name="John" />)
+
+        expect(screen.getByText('Welcome John!')).toBeInTheDocument();
+    });
+
     it('should render a section with the expected text', () => {
         Description.mock
         render(<Welcome />)
