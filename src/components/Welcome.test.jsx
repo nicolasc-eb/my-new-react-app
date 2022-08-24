@@ -17,7 +17,6 @@ describe('Welcome component', () => {
     });
 
     it('should render a section with the expected text', () => {
-        Description.mock
         render(<Welcome />)
 
         // expect(
